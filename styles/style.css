@@ -1,0 +1,458 @@
+/* ------------------------------------------ */
+/* ---------------- Animations -------------- */
+/* ------------------------------------------ */
+
+/* Adds animation that goes from transparent to opaque when page loads */
+@keyframes fadeIn {
+  from { opacity: 0 ;}
+  to {opacity: 1 ;}
+}
+
+/* Adds animation that increases margin-top from negatives, creating the effect of sliding down when page loads */
+@keyframes moveDown {
+  from { margin-top: -10px; }
+  to { margin-top: 8px; }
+}
+
+/* ------------------------------------------ */
+/* --------------- Global CSS --------------- */
+/* ------------------------------------------ */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Removes default padding and margin from body tag */
+body {
+    background-image: url('images/background_graphic.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Adds margin and padding to just main */
+main {
+    margin: 8px;
+    padding: 8px;
+}
+
+/* Adds animation to main and footer so header isnt effected */
+main, footer {
+    animation: fadeIn 1s ease;
+    animation: moveDown 1s ease;
+}
+
+/* ------------------------------------------ */
+/* ------- Heading and Navigation CSS ------- */
+/* ------------------------------------------ */
+
+/* colours the navigation bar */
+nav {
+    background-color: #77DD77;
+}
+
+/* formats the navigation bar */
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 5em;
+    padding: 1em 2em;
+    margin: 0px;
+    align-items: center;
+    text-align: center;
+}
+
+/* removes dots */
+nav li { 
+    list-style: none;
+}
+
+/* formats the navigation links */
+.navlink { 
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease;
+}
+
+/* on hover, the navigation links will go up by 5 pixels and change color with underline */
+.navlink:hover {
+    color: #2E6F40;
+    text-decoration: underline;
+    transform: translateY(-5px);
+}
+
+/* ------------------------------------------ */
+/* ------- Footer CSS ------- */
+/* ------------------------------------------ */
+
+/* formats the footer */
+footer {
+    margin: 0px;
+    background-color: #77DD77;
+    bottom: 0px;
+    padding: 1em;
+    padding-bottom: 4em;
+}
+
+/* formats the navigation links */
+footer ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5em;
+    padding: 1em 2em;
+    margin: 0px;
+    align-items: center;
+    text-align: center;
+}
+
+/* removes dots */
+footer li {
+    list-style: none;
+}
+
+/* ------------------------------------------ */
+/* ------- Index CSS ------- */
+/* ------------------------------------------ */
+
+/* adds shadow and border */
+.border_with_shadow {
+    box-shadow: #00000051 10px 10px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* colours text in green */
+.highlight {
+  color: #2E6F40;
+} 
+
+/* formats the text with image container */
+.text_with_image_container {
+  background-color: #c4ffc4;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  margin: 16px;
+}
+
+/* changes font size of description */
+.description {
+  font-size: 1.5em;
+}
+
+/* changes font size of slogan */
+#slogan {
+  font-size: 2em;
+}
+
+/* formats the search bar container */
+#searchbar_container {
+  background-color: #98f898;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  margin: 16px;
+}
+
+/* formats the search bar heading/label */
+#searchbar_container label {
+  font-weight: bold;
+  margin: 16px;
+  font-size: 2em;
+}
+
+/* formats the search bar */
+#searchbar {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 2px;
+
+}
+
+/* formats the search bar input and button */
+#searchbar input, #searchbar button {
+    line-height: 2;
+    font-size: 2em;
+    padding: 0px 60px;
+    margin: 0px;
+    border: 0px;
+}
+
+/* formats the search bar button colours and cursor */
+#searchbar button {
+    cursor: pointer;
+    color: white;
+    background-color: #2E6F40;
+}
+
+/* formats the search bar button on hover */
+#searchbar button:hover {
+    background-color: #379251;
+}
+
+/* formats the table container */
+#table_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c4ffc4;
+    padding: 64px;
+    margin: 16px;
+}
+
+/* puts image and header side by side */
+#header_with_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c4ffc4;
+    margin-bottom: 16px;
+}
+
+/* gives border to header's image */
+#header_with_image img {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* formats the table */
+#table_container table {
+    width: 80%;
+    margin: auto;
+}
+
+/* formats the table h2 */
+#table_container h2 {
+    font-weight: bold;
+    margin-top: 0px;
+    margin: 16px;
+    font-size: 2em;
+}
+
+/* formats the table th and td */
+#table_container table td, #table_container table th {
+    padding: 16px;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+/* formats the table th colour */
+#table_container table th {
+    background-color: #2E6F40;
+    color: white;
+}
+
+/* formats the table td colour */
+#table_container table td {
+    background-color: #98f898;
+    color: black;
+}
+
+/* ------------------------------------------ */
+/* ---------- About CSS ---------- */
+/* ------------------------------------------ */
+
+.red_highlight:hover {
+  color: #E83410; /* Changes text color to red on hover */
+}   
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td{
+  border: 2px solid #59ce9595;
+  padding: 8px;
+  text-align: left;
+}   
+
+td:hover {
+   color: #e81010;
+   text-shadow:  #56c598 1px 1px 2px, #3e8461 0 0 25px,#73c591 0 0 5px;
+}
+
+#format{
+    display: flex; 
+    text-align: left; 
+    gap: 5%;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-bottom: 3%;
+    background-color: #4cab88;
+}
+
+#textformat{  
+    font-weight:400;
+    font-family: 'Times New Roman', Times, serif
+}
+
+/* The devs names are styled with shadows */
+.sample{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #1c5637;
+    text-shadow: 6px 4px 8px burlywood;
+}
+
+/* MEMBER QUOTES POPUP EFFECT */
+/*tile format css*/
+#member-quotes dl {
+    background-color: #ffffff; 
+    border: solid 0.3em transparent; 
+    padding: 1em;
+    margin-bottom: 1.5em;
+    border-radius: 0.5em;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Hover state for tiles */
+#member-quotes dl:hover {
+    transform: scale(1.03); 
+    background-color: #d5ffd5; 
+    border-color: #66cc66; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+/* color change for student names on hover */
+#member-quotes dl:hover dt .sample {
+    color: #0f836c;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* the images are scaled by 20% when hovered */
+img:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+figure{
+    margin-left: 400px;
+    border: sienna solid 0.3em;
+    width: 400px;
+    height: 300px;
+}
+/* ------------------------------------------ */
+/* ---------- Application Form CSS ---------- */
+/* ------------------------------------------ */
+
+/* Styles for form border */
+.form_title{
+    text-align: center;
+    margin-bottom: 0;
+    background-color: #77DD77;
+    max-width: 600px;
+    width: 60%;
+    margin: auto;
+    padding: 0.5em;
+}
+.input_form{
+    background-color: #c4ffc4;
+    border: solid 0.3em #77DD77;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding: 0.5em;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+/* Styles for fieldsets and legends */
+.form_field{
+    border: 0;
+}
+.form_field legend{
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+    text-transform:uppercase;
+}
+
+/* Styles for label and input */
+.form_input{
+    width: 100%;
+    height: 1.4rem;
+    font-size: 1.2rem;
+}
+#DOB, #reference_num {letter-spacing: 1rem;}
+.form_field p{font-size: 1.05rem;}
+.select_input{height: 1.4rem;font-size: 1.1rem;}
+
+/* Styles for submit button */
+#submit_reset{
+    text-align: center;
+    padding:0;
+    margin-top: -1.2rem;
+}
+.submit_but, .reset_but{
+    color: white;
+    border: 0;
+    width: 40%;
+    padding: 0.7rem;
+    background-color: rgb(45, 134, 243);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.submit_but:hover, .reset_but:hover{background-color: rgb(0, 79, 182);}
+.submit_but:active, .reset_but:active{width: 37.5%;}
+
+/* ------------------------------------------ */
+/* ---------- Jobs Form CSS ---------- */
+/* ------------------------------------------ */
+/*Class to style aside tag in the jobs page */
+.badge {
+    float: right;
+    text-align: center;
+    width: 25%;
+    margin: 0 0 1rem 1rem;
+    padding: 0.5em;
+    border:solid#69c037b4;
+    border-radius: 25px;
+    background-color:   #69c037b4;
+}
+
+/*Class to style span tag in the jobs page */
+.RefNum{
+    border:solid #69c037b4;
+    border-radius: 25px;
+    background-color: #69c037b4;
+
+
+}
+
+
+/*Apply button styling*/
+.apply_button{
+    display: block;
+    background-color: #598cd8;
+    color: rgb(0, 0, 0);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+    margin-left: auto;
+    text-decoration: none;
+}
+/*Hover effect for apply button*/
+.apply_button:hover {
+    background-color: #3da8e6;
+}
