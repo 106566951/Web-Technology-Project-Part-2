@@ -24,7 +24,7 @@
     </header>
     <main>
         <h2 class="form_title">Application Form</h2>  
-        <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" class="input_form"> 
+        <form method="post" action="process_eoi.php" class="input_form"> 
             <fieldset class="form_field" id="job_num">
                 <legend>Job Vacancy</legend>
                 <p> 
