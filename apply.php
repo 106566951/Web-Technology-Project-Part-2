@@ -36,15 +36,15 @@
                 <legend>Applicant Details</legend>
                 <p>
                     <label for="first_name">First Name:</label>
-                    <input class="form_input" type="text" id="first_name" maxlength="20" pattern="^[a-zA-Z]+$" required>
+                    <input class="form_input" type="text" name="first_name" id="first_name" maxlength="20" pattern="^[a-zA-Z]+$" required>
                 </p>
                 <p>
                     <label for="last_name">Last Name:</label>
-                    <input class="form_input" type="text" id="last_name" maxlength="20" pattern="^[a-zA-Z]+$" required>
+                    <input class="form_input" type="text" name="last_name" id="last_name" maxlength="20" pattern="^[a-zA-Z]+$" required>
                 </p>
                 <p>
                     <label for="DOB">Date of Birth:</label>
-                    <input class="form_input" type="text" name="date" id="DOB" placeholder="dd/mm/yyyy" maxlength="10" size="10" pattern="\d{2}/\d{2}/\d{4}" required>
+                    <input class="form_input" type="text" name="dob" id="DOB" placeholder="dd/mm/yyyy" maxlength="10" size="10" pattern="\d{2}/\d{2}/\d{4}" required>
                 </p>
             </fieldset>
             <fieldset  class="form_field" id="input_gender">
