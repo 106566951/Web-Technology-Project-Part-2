@@ -50,9 +50,16 @@ CREATE TABLE `eoi` (
 -- Table structure for table `jobs`
 --
 
-CREATE TABLE `jobs` (
-  `reference_num` int(6) UNSIGNED NOT NULL,
-  `jobname` varchar(100) NOT NULL
+CREATE TABLE jobs (
+    reference_num VARCHAR(10) NOT NULL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    badge VARCHAR(100),
+    description TEXT,
+    salary VARCHAR(50),
+    reports_to VARCHAR(100),
+    responsibilities TEXT,
+    essential_requirements TEXT,
+    preferred_requirements TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
