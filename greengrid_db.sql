@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `eoi` (
+  `EOI_ID` INT AUTO_INCREMENT PRIMARY KEY,
   `reference_num` int(6) UNSIGNED NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
@@ -95,8 +96,6 @@ CREATE TABLE `users` (
 --
 -- Indexes for table `eoi`
 --
-ALTER TABLE `eoi`
-  ADD PRIMARY KEY (`reference_num`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `street_address` (`street_address`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `suburb_town` (`suburb_town`);
 

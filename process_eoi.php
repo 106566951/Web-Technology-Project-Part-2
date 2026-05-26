@@ -1,3 +1,4 @@
+<?php
 /** 
 *  process_eoi.php
 *
@@ -10,24 +11,17 @@
 * Last Modified:         26/5/2026
 */
 
-<?php
 require_once "./settings.php";
    # Checks if user came from application form via Post.
- if ($_SERVER["REQUEST_METHOD"] == "POST"){
-   #
-   $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
-   if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-   } else{
-      $table_name = "eoi";
-      $stmt = $conn->prepare("SHOW TABLES LIKE ?"); # A query that checks if a table exists
-      $stmt->bind_param("s", $table_name); # Verifying which table to check for
-      $stmt->execute(); 
-      $result = $stmt->get_result(); # Gaining result from query
-      
-      if ($result->num_rows < 0) { # Checks if table has any rows, if not, Create a table.
+   if ($_SERVER["REQUEST_METHOD"] == "POST"){
+      #
+      $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+      if (!$conn) {
+         die("Connection failed: " . mysqli_connect_error());
+      } else{
          $create_table = "
-            CREATE TABLE `eoi` (
+            CREATE TABLE IF NOT EXISTS `eoi` (
+            `EOI_ID` INT AUTO_INCREMENT PRIMARY KEY,
             `reference_num` int(6) UNSIGNED NOT NULL,
             `firstname` varchar(50) NOT NULL,
             `lastname` varchar(50) NOT NULL,
@@ -68,8 +62,7 @@ require_once "./settings.php";
       }
    
       function validate_address(){}
-   }
- }  else {
-    header("Location: apply.php");
+   } else {
+      header("Location: apply.php");
  }
 ?>
