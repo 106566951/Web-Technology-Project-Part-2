@@ -2,7 +2,12 @@
 require_once "settings.php";
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if(!$conn) die("Connection Failed: ". mysqli_connect_error());
-$stmt = mysqli_query($conn, "SELECT * FROM jobs");
+if(!empty($_GET['search'])) {
+    $search = $_GET['search'];
+    $stmt = mysqli_query($conn, "SELECT * FROM jobs WHERE title LIKE '%$search%' OR reference_num LIKE '%$search%'");
+} else {
+    $stmt = mysqli_query($conn, "SELECT * FROM jobs");
+}
 ?>
 
 <?php include 'header.inc'; ?>
@@ -68,6 +73,6 @@ $stmt = mysqli_query($conn, "SELECT * FROM jobs");
     </article>
   <?php } ?>
 
-
+</main>
 
 <?php include 'footer.inc'; ?>
