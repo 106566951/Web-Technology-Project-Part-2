@@ -18,6 +18,12 @@
   <!-- Inline styling on this H2 to make it stand out-->
     <h2 style="font-size: 1.8rem; color: #2c6e2c; font-style: italic; padding-bottom: 6px;">Current Available Positions</h2>
     <!-- Job Listing 1: Public engagement officer-->
+
+    <form method = "GET" action="jobs.php">
+      <input type ="text" name = "search" placeholder="Search jobs...">
+      <button type="submit">Search</button>
+    </form>
+    
   <article>
     <h2> Public Engagement Officer </h2>
     <!-- RefNum class to later style-->
