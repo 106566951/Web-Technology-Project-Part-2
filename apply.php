@@ -66,7 +66,7 @@
                 </p>
                 <p>
                     <label for="town">Suburb/Town:</label>
-                    <input class="form_input" type="text" name="town" id="town" maxlength="40"  >
+                    <input class="form_input" type="text" name="suburb_town" id="town" maxlength="40"  >
                 </p>
                 <p>
                     <label for="state">State:</label>
@@ -95,20 +95,20 @@
                 </p>
                 <p>
                     <label for="number">Mobile Number:</label>
-                    <input class="form_input" type="text" name="number" id="number" minlength="8" maxlength="12">
+                    <input class="form_input" type="text" name="phone_num" id="number" minlength="8" maxlength="12">
                 </p>
             </fieldset>
             <fieldset  class="form_field" id="input_skills">
                 <legend>Applicant Skill-set</legend>
                 <p>
                     <label for="comms">Communication</label>
-                    <input type="checkbox" name="skills[]" id="comms" value="comms">
+                    <input type="checkbox" name="skill_set[]" id="comms" value="comms">
                     <label for="strategy">Consultation Strategy Design</label>
-                    <input type="checkbox" name="skills[]" id="strategy" value="design strategy">
+                    <input type="checkbox" name="skill_set[]" id="strategy" value="design strategy">
                     <label for="frontend">Frontend development</label>
-                    <input type="checkbox" name="skills[]" id="frontend" value="frontend">
+                    <input type="checkbox" name="skill_set[]" id="frontend" value="frontend">
                     <label for="backend">Backend development</label>
-                    <input type="checkbox" name="skills[]" id="backend" value="backend">
+                    <input type="checkbox" name="skill_set[]" id="backend" value="backend">
                 </p>
                 <p>
                     <label for="other_skills">Other Skills</label><br>

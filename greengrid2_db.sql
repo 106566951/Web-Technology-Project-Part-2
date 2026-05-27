@@ -29,17 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `eoi` (
   `eoi_id` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
-  `reference_num` int(6) UNSIGNED NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
+  `reference_num` varchar(6) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `dob` date NOT NULL,
   `gender` enum('other','Male','Female') NOT NULL DEFAULT 'other',
-  `street_address` text NOT NULL,
+  `street` text NOT NULL,
   `suburb_town` varchar(100) NOT NULL,
   `state` enum('VIC','NSW','QLD','NT','WA','SA','TAS','ACT') NOT NULL,
   `postcode` int(4) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL,
-  `phone_num` int(10) UNSIGNED ZEROFILL NOT NULL,
+  `phone_num` VARCHAR(12) NOT NULL,
   `skill_set` set('Communication','Consultation Strategy Design','Frontend development','Backend development','Knowledge on Git version control') NOT NULL,
   `other_skills` text NOT NULL,
   `status` enum('New','Current','Final','') NOT NULL DEFAULT 'New'
@@ -120,7 +120,7 @@ CREATE TABLE `users` (
 --
 -- Indexes for table `eoi`
 --
-ALTER TABLE `eoi` ADD FULLTEXT KEY `street_address` (`street_address`);
+ALTER TABLE `eoi` ADD FULLTEXT KEY `street` (`street`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `suburb_town` (`suburb_town`);
 
 --
