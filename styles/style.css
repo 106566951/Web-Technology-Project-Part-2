@@ -41,8 +41,8 @@ main {
 
 /* Adds animation to main and footer so header isnt effected */
 main, footer {
-    animation: fadeIn 1s ease;
-    animation: moveDown 1s ease;
+    animation: moveDown 1s ease, fadeIn 0.8s ease;
+
 }
 
 /* ------------------------------------------ */
@@ -57,7 +57,7 @@ nav {
 /* formats the navigation bar */
 nav ul {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 5em;
     margin: 0px;
     align-items: center;
@@ -253,6 +253,135 @@ footer li {
 #table_container table td {
     background-color: #98f898;
     color: black;
+}
+
+/* ------------------------------------------ */
+/* ------- Login Page CSS ------- */
+/* ------------------------------------------ */
+
+/* ---- Contains Login Card ---- */
+.login_container {
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+
+/* ---- Formats Login Card ---- */
+.login_card {
+    display: flex;
+    width: 75%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: #00000051 10px 10px 10px;
+    border: 1px solid black;
+}
+
+/* ---- Form Panel ---- */
+.login_form_panel {
+    flex: 1;
+    background: rgba(196, 255, 196, 0.55);
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login_form_panel h1 {
+    font-size: 2em;
+    font-weight: 800;
+    color: #1a4a2a;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+
+.login_form_panel p.login_subtitle {
+    color: #4a7a5a;
+    margin: 0px;
+    margin-bottom: 32px;
+}
+
+/* ---- Input Containers ---- */
+
+.input_container {
+    margin-bottom: 18px;
+}
+
+.input_container label {
+    display: block;
+    font-weight: 600;
+    color: #2E6F40;
+    margin-bottom: 6px;
+}
+
+.input_container input {
+    width: 100%;
+    padding: 12px;  
+    border: 1.5px solid rgba(119, 221, 119, 0.7);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.6);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input_container input:focus {
+    border-color: #2E6F40;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* ---- Login Button ---- */
+.login_btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background: #2E6F40;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    box-shadow: #00000051 10px 10px 10px;
+    letter-spacing: 0.3px;
+}
+
+.login_btn:hover {
+    background: #379251;
+    transform: translateY(-2px);
+}
+
+.login_btn:active {
+    transform: translateY(0px);
+}
+
+/* ---- Image Panel ---- */
+.login_image_panel {
+    flex: 1.75;
+    background: linear-gradient(145deg, #1a4a2a 0%, #2E6F40 50%, #77DD77 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_image_panel img {
+    width: 40%;
+    border-radius: 16px;
+    box-shadow: #00000051 10px 10px 10px;
+}
+
+.login_image_panel .image_slogan {
+    margin-top: 32px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.login_image_panel .image_slogan span {
+    color: #c4ffc4;
 }
 
 /* ------------------------------------------ */
