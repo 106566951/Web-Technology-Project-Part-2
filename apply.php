@@ -29,28 +29,28 @@
                 <legend>Job Vacancy</legend>
                 <p> 
                     <label for="reference_num">Job Reference Number:</label>
-                    <input class="form_input" type="text" id="reference_num" name="reference_number" maxlength="5" minlength="5" pattern="^[a-zA-Z0-9]+$" required>
+                    <input class="form_input" type="text" id="reference_num" name="reference_num" maxlength="5" minlength="5">
                 </p>
             </fieldset>
             <fieldset class="form_field" id="input_user">
                 <legend>Applicant Details</legend>
                 <p>
                     <label for="first_name">First Name:</label>
-                    <input class="form_input" type="text" name="first_name" id="first_name" maxlength="20" pattern="^[a-zA-Z]+$" required>
+                    <input class="form_input" type="text" name="first_name" id="first_name" maxlength="20">
                 </p>
                 <p>
                     <label for="last_name">Last Name:</label>
-                    <input class="form_input" type="text" name="last_name" id="last_name" maxlength="20" pattern="^[a-zA-Z]+$" required>
+                    <input class="form_input" type="text" name="last_name" id="last_name" maxlength="20">
                 </p>
                 <p>
                     <label for="DOB">Date of Birth:</label>
-                    <input class="form_input" type="text" name="dob" id="DOB" placeholder="dd/mm/yyyy" maxlength="10" size="10" pattern="\d{2}/\d{2}/\d{4}" required>
+                    <input class="form_input" type="text" name="dob" id="DOB" placeholder="dd/mm/yyyy" maxlength="10" size="10">
                 </p>
             </fieldset>
             <fieldset  class="form_field" id="input_gender">
                 <legend>Gender</legend>
                 <p>
-                    <input class="radio_input" type="radio" name="gender" id="other" value="other" required checked>
+                    <input class="radio_input" type="radio" name="gender" id="other" value="other" checked>
                     <label for="other">Other</label>
                     <input class="radio_input" type="radio" id="male" name="gender" value="male">
                     <label for="male">Male</label>
@@ -62,15 +62,15 @@
                 <legend>Applicant Address</legend>
                 <p>
                     <label for="street">Street Address:</label>
-                    <input class="form_input" type="text" name="street" id="street" maxlength="40" required>
+                    <input class="form_input" type="text" name="street" id="street" maxlength="40" >
                 </p>
                 <p>
                     <label for="town">Suburb/Town:</label>
-                    <input class="form_input" type="text" name="town" id="town" maxlength="40" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" required>
+                    <input class="form_input" type="text" name="town" id="town" maxlength="40"  >
                 </p>
                 <p>
                     <label for="state">State:</label>
-                    <select class="select_input" name="state" id="state" required>
+                    <select class="select_input" name="state" id="state">
                         <option value="">Select State</option>
                         <option value="vic">VIC</option>
                         <option value="nsw">NSW</option>
@@ -84,18 +84,18 @@
                 </p>
                 <p>
                     <label for="postcode">Postcode:</label>
-                    <input class="form_input" type="text" name="postcode" id="postcode" maxlength="4" minlength="4" pattern="\d{4}" required>
+                    <input class="form_input" type="text" name="postcode" id="postcode" maxlength="4" minlength="4">
                 </p>
             </fieldset>
             <fieldset  class="form_field" id="input_contact">
                 <legend>Applicant Contact Details</legend>
                 <p>
                     <label for="email">Email:</label>
-                    <input class="form_input" type="email" name="email" id="email" required>
+                    <input class="form_input" type="email" name="email" id="email">
                 </p>
                 <p>
                     <label for="number">Mobile Number:</label>
-                    <input class="form_input" type="text" name="number" id="number" minlength="8" maxlength="12" pattern="\d{8,12}" required>
+                    <input class="form_input" type="text" name="number" id="number" minlength="8" maxlength="12">
                 </p>
             </fieldset>
             <fieldset  class="form_field" id="input_skills">

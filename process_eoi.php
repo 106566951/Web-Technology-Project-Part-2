@@ -8,13 +8,13 @@
 *
 * Author:                Kaleb Larkins
 * Date created:          21/5/2026
-* Last Modified:         26/5/2026
+* Last Modified:         27/5/2026
 */
 
 require_once "./settings.php";
    # Checks if user came from application form via Post.
    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-      #
+      # Connects to the database with a check.
       $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
       if (!$conn) {
          die("Connection failed: " . mysqli_connect_error());
@@ -38,30 +38,45 @@ require_once "./settings.php";
             `status` enum('New','Current','Final','') NOT NULL DEFAULT 'New'
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
          ";
-         if(mysqli_query($conn, $create_table)){
-            echo "Created Table!";
+         if(!mysqli_query($conn, $create_table)){ # Creates table if it doesn't exist.
+            die("Table not created");
          }
       }
          
-      # Does a basic clean of the input data
+      # Does a basic clean of parameter variable
       function clean_data($data) {
          $data = htmlspecialchars(stripslashes(trim($data)));
          return $data;
       }
-   
+      # Takes each text based input field and cleans the $post inputs.
       $input_fields = ['reference_num', 'first_name', 'last_name', 
                   'dob', 'gender', 'street',
                   'town', 'state', 'postcode', 
                   'email', 'number', 'other_skills'];
       $data = [];
       foreach($input_fields as $field){
-         $data[$field] = clean_data(isset($_POST[$field]));
+         $data[$field] = isset($_POST[$field]) ? clean_data($_POST[$field]) : '';
       }
-      foreach($data as $field => $data){
-         echo "$data\n";
+      
+      /*
+      * This next chunk of code validates each field
+      * and generates errors if any.
+      */
+      $error_messages = []; # To store all errors that occur
+      # Validating job reference number
+      if(empty($data['reference_num'])) {
+         $error_messages['reference_num'] = "A Job reference is required";
+      } else {
+         # Checking database for the reference number.
+         $stmt = $conn->prepare("SELECT * FROM jobs WHERE reference_num = ?");
+         $stmt->bind_param("s", $data['reference_num']);
+         $stmt->execute();
+         $result = $stmt->get_result();
+         if(mysqli_num_rows($result) == 0){
+            $error_messages['reference_num'] = "This is not in the Job list";
+         }
       }
-   
-      function validate_address(){}
+
    } else {
       header("Location: apply.php");
  }
