@@ -65,7 +65,7 @@ require_once "./settings.php";
       $error_messages = []; # To store all errors that occur
       # Validating job reference number
       if(empty($data['reference_num'])) {
-         $error_messages['reference_num'] = "A Job reference is required";
+         $error_messages['reference_num'] = "A Job reference is required.";
       } else {
          # Checking database for the reference number.
          $stmt = $conn->prepare("SELECT * FROM jobs WHERE reference_num = ?");
@@ -73,7 +73,15 @@ require_once "./settings.php";
          $stmt->execute();
          $result = $stmt->get_result();
          if(mysqli_num_rows($result) == 0){
-            $error_messages['reference_num'] = "This is not in the Job list";
+            $error_messages['reference_num'] = "This is not in the Job list.";
+         }
+      }
+      # Validating Name input
+      foreach (['first_name', 'last_name'] as $name) {
+         if(empty($data[$name])) {
+            $error_messages[$name] = "First and last name is required.";
+         } elsif(!preg_match('^[a-zA-Z]+$', $data[$name])) {
+            $error_messages[$name] = "Letters only.";
          }
       }
 
