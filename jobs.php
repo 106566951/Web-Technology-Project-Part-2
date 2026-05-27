@@ -3,11 +3,12 @@ require_once "settings.php";
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if(!$conn) die("Connection Failed: ". mysqli_connect_error());
 if(!empty($_GET['search'])) {
-    $search = $_GET['search'];
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
     $stmt = mysqli_query($conn, "SELECT * FROM jobs WHERE title LIKE '%$search%' OR reference_num LIKE '%$search%'");
 } else {
     $stmt = mysqli_query($conn, "SELECT * FROM jobs");
 }
+
 ?>
 
 <?php include 'header.inc'; ?>
@@ -28,13 +29,14 @@ if(!empty($_GET['search'])) {
   <form method="GET" action="jobs.php">
     <input type="text" name="search" placeholder="Search jobs...">
     <button type="submit">Search</button>
+    <a href="jobs.php"><button type="button">Reset</button></a>
   </form>
 
   <?php while ($row = mysqli_fetch_assoc($stmt)) { ?>
     <article>
       <h2><?php echo $row['title']; ?></h2>
       <p>Reference Number: <span class="RefNum"><?php echo $row['reference_num']; ?></span></p>
-      <aside class="badge"><?php echo $row['badge']; ?></aside>
+      <span class="badge"><?php echo $row['badge']; ?></span>
       <p><?php echo $row['description']; ?></p>
       <p>Salary: <?php echo $row['salary']; ?></p>
       <p>Report to <?php echo $row['reports_to']; ?></p>

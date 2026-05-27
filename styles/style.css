@@ -415,7 +415,7 @@ figure{
 /* ------------------------------------------ */
 /* ---------- Jobs Form CSS ---------- */
 /* ------------------------------------------ */
-/*Class to style aside tag in the jobs page */
+/*Class to style badge tag in the jobs page */
 .badge {
     float: right;
     text-align: center;
@@ -425,6 +425,15 @@ figure{
     border:solid#69c037b4;
     border-radius: 25px;
     background-color:   #69c037b4;
+}
+
+@media (max-width: 768px) {
+    .badge {
+        float: none;
+        width: auto;
+        margin: 0.5rem 0;
+        display: block;
+    }
 }
 
 /*Class to style span tag in the jobs page */
