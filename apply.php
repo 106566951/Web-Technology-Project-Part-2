@@ -56,7 +56,7 @@
                     <label for="male">Male</label>
                     <input class="radio_input" type="radio" name="gender" id="female" value="female">
                     <label for="female">Female</label>
-                </p>
+                </p> 
             </fieldset>
             <fieldset  class="form_field" id="input_address">
                 <legend>Applicant Address</legend>
@@ -91,7 +91,7 @@
                 <legend>Applicant Contact Details</legend>
                 <p>
                     <label for="email">Email:</label>
-                    <input class="form_input" type="email" name="email" id="email">
+                    <input class="form_input" type="text" name="email" id="email">
                 </p>
                 <p>
                     <label for="number">Mobile Number:</label>

@@ -63,7 +63,7 @@ require_once "./settings.php";
       * and generates errors if any.
       */
       $error_messages = []; # To store all errors that occur
-      # Validating job reference number
+      # Validating job reference number:
       if(empty($data['reference_num'])) {
          $error_messages['reference_num'] = "A Job reference is required.";
       } else {
@@ -76,15 +76,69 @@ require_once "./settings.php";
             $error_messages['reference_num'] = "This is not in the Job list.";
          }
       }
-      # Validating Name input
+      # Validating Names input:
       foreach (['first_name', 'last_name'] as $name) {
          if(empty($data[$name])) {
             $error_messages[$name] = "First and last name is required.";
-         } elsif(!preg_match('^[a-zA-Z]+$', $data[$name])) {
+         } elsif(!preg_match('^[a-zA-Z]+$', $data[$name])) { # Moved regex to php 
             $error_messages[$name] = "Letters only.";
          }
       }
+      # Validating date of birth:
+      if(empty($data['dob'])) {
+         $error_messages['dob'] = "Date of birth is required.";
+      } elsif(!preg_match('\d{2}/\d{2}/\d{4}', $data['dob'])) {
+         $error_messages['dob'] = "Use dd/mm/yyyy format.";
+      } else {
+         # Checks if date of birth is within a realistic time frame.
+         [$day, $month, $year] = explode('/', $data['dob']);
+         if (!checkdate((int)$month, (int)$day, (int)$year)) {
+            $error_messages['dob'] = "That is not a valid date.";
+         } elsif ((int)$year < 1910 || (int)$year > (date('Y') - 15)) {
+            $error_messages['dob'] = "This is an unrealistic date.";
+         }
+      }
+      # Validating street address:
+      if(empty($data['street'])) {
+         $error_messages['street'] = "Street address is required.";
+      } 
+      # Validating suburb/town input:
+      if(empty($data['town'])) {
+         $error_messages['town'] = "Suburb/Town is required.";
+      } elsif(!preg_match('^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$', $data['town'])) {
+         $error_messages['town'] = "Please input a valid suburb/town name.";
+      }
+      # Validating State Input: 
+      $allowed_states = ['vic','nsw','qld','nt','wa','sa','tas','act']; # White-listing the states
+      if(!in_array($data['state'], $allowed_states)) {
+         $error_messages['state'] = "Please select a state";
+      }
+      # Validating Postcode input: 
+      if(empty($data['postcode'])) {
+         $error_messages['postcode'] = "Postcode is required";
+      } elsif(!preg_match('\d{4}', $data['postcode'])) {
+         $error_messages['postcode'] = "4 numbers only.";
+      }
+      # Validating email input:
+      if(empty($data['email'])) {
+         $error_messages['email'] = "Email is required.";
+      } elsif(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+         $error_messages['email'] = "Please enter a valid email address.";
+      }
+      # Validating mobile number input: 
+      if(empty($data['number'])) {
+         $error_messages['number'] = "Number is required."; 
+      } elsif(!preg_match('\d{8,12}', $data['number'])) {
+         $error_messages['number'] = "Please enter a valid number between 8-12 digits.";
+      }
+      # Validating other skills textarea: 
+      if(strlen($data['other_skills']) > 500) {
+         $error_messages['other_skills'] = "Please keep other skills text to under 500 characters.";
+      } elsif(!preg_match('/<[^>]*>/', $data['other_skills'])) {
+         $error_messages['other_skills'] = "Html tags are not allowed.";
+      }
 
+      
    } else {
       header("Location: apply.php");
  }
