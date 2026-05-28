@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="The Coders" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Page</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <style></style>
-</head>
-<body>
-    <!-- Header and Navigation Bar --> 
-    <header>
-        <nav>
-            <ul>
-                <li><img src="images/greengrid_logo.png" width="50px" height="45px" alt="greengrid_logo"></li>
-                <li><h1>GREEN GRID</h1></li>
-                <li><a class="navlink" href="index.html">Home Page</a></li>
-                <li><a class="navlink" href="apply.html">Apply Now</a></li>
-                <li><a class="navlink" href="jobs.html">Job Listings</a></li>
-                <li><a class="navlink" href="about.html">About Us</a></li>
-            </ul>
-    </nav>
-    </header>
+<?php include 'header.inc'; ?>
+<?php include 'nav.php'; ?>
     <main>
         <h2 class="form_title">Application Form</h2>  
         <form method="post" action="process_eoi.php" class="input_form"> 
@@ -35,12 +13,12 @@
             <fieldset class="form_field" id="input_user">
                 <legend>Applicant Details</legend>
                 <p>
-                    <label for="first_name">First Name:</label>
-                    <input class="form_input" type="text" name="first_name" id="first_name" maxlength="20">
+                    <label for="firstname">First Name:</label>
+                    <input class="form_input" type="text" name="first_name" id="firstname" maxlength="20">
                 </p>
                 <p>
-                    <label for="last_name">Last Name:</label>
-                    <input class="form_input" type="text" name="last_name" id="last_name" maxlength="20">
+                    <label for="lastname">Last Name:</label>
+                    <input class="form_input" type="text" name="last_name" id="lastname" maxlength="20">
                 </p>
                 <p>
                     <label for="DOB">Date of Birth:</label>
@@ -128,12 +106,4 @@
         </form>
     </main>
     
-    <footer>
-        <ul>
-            <li><a href="https://greengrid.atlassian.net/jira/software/projects/GG/boards/2"> Jira Project</a></li>
-            <li><a href="https://github.com/106566951/Web-Technology-Project-Part-1"> Github Repository</a></li>
-            <li>Email: <a href="mailto:info@greengridbusiness.com">info@greengridbusiness.com</a></li>
-        </ul>
-    </footer>
-</body>
-</html>
+<?php include 'footer.inc'; ?>

@@ -21,7 +21,7 @@ require_once "./settings.php";
       } else{
          $create_table = "
             CREATE TABLE IF NOT EXISTS `eoi` (
-            `eoi_id` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+            `eoi_id` int AUTO_INCREMENT  PRIMARY KEY NOT NULL,
             `reference_num` varchar(6) NOT NULL,
             `first_name` varchar(50) NOT NULL,
             `last_name` varchar(50) NOT NULL,
