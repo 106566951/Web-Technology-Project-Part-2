@@ -14,11 +14,11 @@
                 <legend>Applicant Details</legend>
                 <p>
                     <label for="firstname">First Name:</label>
-                    <input class="form_input" type="text" name="firstname" id="firstname" maxlength="20">
+                    <input class="form_input" type="text" name="first_name" id="firstname" maxlength="20">
                 </p>
                 <p>
                     <label for="lastname">Last Name:</label>
-                    <input class="form_input" type="text" name="lastname" id="lastname" maxlength="20">
+                    <input class="form_input" type="text" name="last_name" id="lastname" maxlength="20">
                 </p>
                 <p>
                     <label for="DOB">Date of Birth:</label>
