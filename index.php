@@ -1,4 +1,5 @@
 <?php include 'header.inc'; ?>
+<?php include 'nav.php'; ?>
     
 <style>
     .text_with_image_container article {
