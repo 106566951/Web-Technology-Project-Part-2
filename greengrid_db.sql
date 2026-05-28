@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `eoi` (
-  `eoi_id` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `EOInumber` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `reference_num` varchar(6) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,

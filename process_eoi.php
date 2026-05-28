@@ -21,7 +21,7 @@ require_once "./settings.php";
       } else{
          $create_table = "
             CREATE TABLE IF NOT EXISTS `eoi` (
-            `eoi_id` int AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+            `EOInumber` int AUTO_INCREMENT  PRIMARY KEY NOT NULL,
             `reference_num` varchar(6) NOT NULL,
             `first_name` varchar(50) NOT NULL,
             `last_name` varchar(50) NOT NULL,
@@ -34,6 +34,7 @@ require_once "./settings.php";
             `email` varchar(100) NOT NULL,
             `phone_num` VARCHAR(12) NOT NULL,
             `skill_set` text NOT NULL,
+            `other_skills` text NOT NULL,
             `status` enum('New','Current','Final','') NOT NULL DEFAULT 'New'
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
          ";
@@ -151,8 +152,9 @@ require_once "./settings.php";
       }
       
       # Handling the errors if any
-      echo "<table border='1' cellpadding='5'>";
+      
       if(!empty($error_messages)) {
+         echo "<table border='1' cellpadding='5'>";
          echo "<tr><th>Input field</th><th>Error</th></tr>";
          foreach($error_messages as $field => $error) {
             echo "<tr>";
@@ -160,6 +162,8 @@ require_once "./settings.php";
             echo "<td>" . $error . "</td>";
             echo "</tr>";
          }
+         echo "</table>";
+         echo "<a href='apply.php'>Back to application</a>";
       } else {
          # Converting date of birth into MySQL format
          [$day, $month, $year] = explode('/', $data['dob']);
@@ -173,7 +177,7 @@ require_once "./settings.php";
          gender, street, suburb_town, state,
          postcode, email, phone_num, skill_set, other_skills) 
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-         $stmt = $conn->prepare($query); # Must right query correctly with placeholders.
+         $stmt = $conn->prepare($query); # Must write query correctly with placeholders.
          $stmt->bind_param("sssssssssssss", 
          $data['reference_num'], $data['first_name'], $data['last_name'],
          $data['dob'], $data['gender'], $data['street'],
@@ -182,8 +186,13 @@ require_once "./settings.php";
          $data['other_skills']);
          $stmt->execute();
          
+         # Confirmation of successful application
+
+         $EOInumber = mysqli_insert_id($conn);
+         echo "<p>Your application was successful! Your EOI number is: <strong>" . $EOInumber . "</strong></p>";
+         echo "<a href='index.php'>Back to home page</a>";
       }
-      echo "</table>";
+      
       
    } else {
       header("Location: apply.php");
