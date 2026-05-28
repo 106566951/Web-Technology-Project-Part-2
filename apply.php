@@ -1,5 +1,4 @@
 <?php include 'header.inc'; ?>
-<?php include 'nav.php'; ?>
     <main>
         <h2 class="form_title">Application Form</h2>  
         <form method="post" action="process_eoi.php" class="input_form"> 

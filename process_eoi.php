@@ -33,8 +33,7 @@ require_once "./settings.php";
             `postcode` int(4) UNSIGNED NOT NULL,
             `email` varchar(100) NOT NULL,
             `phone_num` VARCHAR(12) NOT NULL,
-            `skill_set` set('Communication','Consultation Strategy Design','Frontend development','Backend development','Knowledge on Git version control') NOT NULL,
-            `other_skills` text NOT NULL,
+            `skill_set` text NOT NULL,
             `status` enum('New','Current','Final','') NOT NULL DEFAULT 'New'
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
          ";
@@ -71,7 +70,7 @@ require_once "./settings.php";
       foreach($input_fields as $field){
          $data[$field] = isset($_POST[$field]) ? clean_data($_POST[$field]) : '';
       }
-      $skill_set = isset($_POST['skill_set']) ? implode(', ', $_POST['skill_set']) : "Didnt work" ;
+      $skill_set = isset($_POST['skill_set']) ? implode(', ', $_POST['skill_set']) : "" ;
       
       /*
       * Validation:
