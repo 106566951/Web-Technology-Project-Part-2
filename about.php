@@ -85,7 +85,7 @@
 </section>
 <br>
 <figure>
-  <img src="images/IMG_0691.jpg" alt="Group photo of the Coders working together" width="400" height="300" loading="lazy">
+  <img src="images/The_Coders.jpg" alt="Group photo of the Coders working together" width="400" height="300" loading="lazy">
   <br>
   <figcaption>"The Coders" collaborating on "Green Grid" Website project.</figcaption>
 </figure><br><br><br>
