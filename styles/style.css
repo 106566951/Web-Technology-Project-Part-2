@@ -49,6 +49,21 @@ main, footer {
 /* ------- Heading and Navigation CSS ------- */
 /* ------------------------------------------ */
 
+/* Accessibility for mobile */
+@media(max-width: 768px){
+     nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .navlink {
+        font-size: 1.1rem;
+    }
+}
+
 /* colours the navigation bar */
 nav {
     background-color: #77DD77;
@@ -559,7 +574,7 @@ figure{
 .submit_but:active, .reset_but:active{width: 37.5%;}
 
 /* Media query for application form */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #input_address p:has(#state) {
         flex-direction: column;
         align-items: flex-start;
