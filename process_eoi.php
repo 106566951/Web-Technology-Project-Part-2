@@ -71,7 +71,7 @@ require_once "./settings.php";
       foreach($input_fields as $field){
          $data[$field] = isset($_POST[$field]) ? clean_data($_POST[$field]) : '';
       }
-      $skill_set = isset($_POST['skill_set[]']) ? implode(', ', $_POST['skill_set[]']) : "" ;
+      $skill_set = isset($_POST['skill_set']) ? implode(', ', $_POST['skill_set']) : "Didnt work" ;
       
       /*
       * Validation:
