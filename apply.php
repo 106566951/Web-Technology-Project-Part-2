@@ -77,17 +77,27 @@
             </fieldset>
             <fieldset  class="form_field" id="input_skills">
                 <legend>Applicant Skill-set</legend>
-                <p>
-                    <label for="comms">Communication</label>
-                    <input type="checkbox" name="skill_set[]" id="comms" value="Communication">
-                    <label for="strategy">Consultation Strategy Design</label>
-                    <input type="checkbox" name="skill_set[]" id="strategy" value="Consultation Strategy Design">
-                    <label for="frontend">Frontend development</label>
-                    <input type="checkbox" name="skill_set[]" id="frontend" value="Frontend development">
-                    <label for="backend">Backend development</label>
-                    <input type="checkbox" name="skill_set[]" id="backend" value="Backend development">
-                    <label for="backend">Knowledge on Git version control</label>
-                    <input type="checkbox" name="skill_set[]" id="git_control" value="Knowledge on Git version control">
+                <p class="input_skills">
+                    <span class="skill_item">
+                        <input type="checkbox" name="skill_set[]" id="comms" value="Communication">
+                        <label for="comms">Communication</label>
+                    </span>
+                    <span class="skill_item">
+                        <input type="checkbox" name="skill_set[]" id="strategy" value="Consultation Strategy Design">
+                        <label for="strategy">Consultation Strategy Design</label>
+                    </span>
+                    <span class="skill_item">
+                        <input type="checkbox" name="skill_set[]" id="frontend" value="Frontend development">
+                        <label for="frontend">Frontend development</label>
+                    </span>
+                    <span class="skill_item">
+                        <input type="checkbox" name="skill_set[]" id="backend" value="Backend development">
+                        <label for="backend">Backend development</label>
+                    </span>
+                    <span class="skill_item">
+                        <input type="checkbox" name="skill_set[]" id="git_control" value="Knowledge on Git version control">
+                        <label for="git_control">Knowledge on Git version control</label>
+                    </span>
                 </p>
                 <p>
                     <label for="other_skills">Other Skills</label><br>

@@ -487,6 +487,7 @@ figure{
     margin: auto;
     padding: 0.5em;
 }
+  
 .input_form{
     background-color: #c4ffc4;
     border: solid 0.3em #77DD77;
@@ -497,6 +498,8 @@ figure{
     width: 60%;
     max-width: 600px;
     border-radius: 0 0 0.5em 0.5em;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Styles for fieldsets and legends */
@@ -520,6 +523,20 @@ figure{
 .form_field p{font-size: 1.05rem;}
 .select_input{height: 1.4rem;font-size: 1.1rem;}
 
+/* Layout for skills list */
+.input_skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.skill_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
 /* Styles for submit button */
 #submit_reset{
     text-align: center;
@@ -540,6 +557,36 @@ figure{
 }
 .submit_but:hover, .reset_but:hover{background-color: rgb(0, 79, 182);}
 .submit_but:active, .reset_but:active{width: 37.5%;}
+
+/* Media query for application form */
+@media (max-width: 600px) {
+    #input_address p:has(#state) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Make the select full width like the other inputs */
+    .select_input {width: 100%;}
+
+    /* Bigger tap targets for inputs */
+    .form_input,.select_input,#input_skills textarea {font-size: 1rem;}
+    .skill_item,#input_gender p {gap: 12px;}
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Stack submit/reset buttons vertically */
+    #submit_reset {flex-direction: column;}
+
+    .submit_but,
+    .reset_but {
+        width: 100%;
+        padding: 12px;
+    }
+}
 
 /* ------------------------------------------ */
 /* ---------- Jobs Form CSS ---------- */
