@@ -11,7 +11,7 @@
                 <h1>Welcome Back</h1>
                 <p class="login_subtitle">Sign in to your GreenGrid account</p>
 
-                <form action="#" method="POST">
+                <form action="process_login.php" method="POST">
                     <!-- Username -->
                     <div class="input_container">
                         <label for="username">Username</label>
