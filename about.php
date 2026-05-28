@@ -17,7 +17,7 @@
     </style>
     <main>
         <section>
-            <h2>Welcome to our about page!</h2>
+            <h2>Welcome to our about page!!</h2>
             <p><span class="red_highlight">Green Grid </span>is a renewable energy company strengthening its technology team to support websites promoting clean energy solutions, project information, and public engagement initiatives.</p>
             <p>We are a team of experts on Sustainable Energy Solutions at Green Grid dedicated to creating <span class="red_highlight">sustainable solutions, development and employment.</span></p>
 		</section>
@@ -26,7 +26,7 @@
             <ul>
                  <li>Group Name: The Coders
             <ul>
-                 <li>Class: Web Development 100026</li>
+                 <li>Class: Web Development COS100026</li>
                  <li>Meeting Time: Thursdays, 4:00 PM - 6:00 PM ; Discord meetings</li>
             </ul>
                  </li>
