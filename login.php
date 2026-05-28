@@ -11,17 +11,17 @@
                 <h1>Welcome Back</h1>
                 <p class="login_subtitle">Sign in to your GreenGrid account</p>
 
-                <form action="process_login.php" method="POST">
+                <form method="POST" novalidate="novalidate">
                     <!-- Username -->
                     <div class="input_container">
                         <label for="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
                     </div>
 
                     <!-- Password -->
                     <div class="input_container">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
                     </div>
 
                     <!-- Submit -->
@@ -49,6 +49,10 @@
     /* Use `$_POST` to capture the username and password from the form. */
     $username = $_POST['username'];
     $password = $_POST['password'];
+
+    if (empty($username) || empty($password)) {
+        exit();
+    }
     
     /*  If theusername is correct 'YourName' and the password is 'YourStudentID' */
     if ($username == 'admin' && $password == 'admin') {
