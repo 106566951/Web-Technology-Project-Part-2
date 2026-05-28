@@ -27,7 +27,16 @@ if(!empty($_GET['search'])) {
   <h2 style="font-size: 1.8rem; color: #2c6e2c; font-style: italic; padding-bottom: 6px;">Current Available Positions</h2>
 
   <form method="GET" action="jobs.php">
-    <input type="text" name="search" placeholder="Search jobs...">
+    <input type="text" name="search" placeholder="Search jobs..." list =search-suggestions>
+      <datalist id="search-suggestions">
+      <option value="Public Engagement Officer"></option>
+      <option value="Web Developer"></option>
+      <option value="Clean Energies Research Expert"></option>
+      <option value="Sustainability Communications Manager"></option>
+      <option value="Green Energy Education Coordinator"></option>
+      <option value="Digital Outreach Specialist"></option>
+      <option value="Corporate Partnerships Officer"></option>
+    </datalist>
     <button type="submit">Search</button>
     <a href="jobs.php"><button type="button">Reset</button></a>
   </form>
@@ -71,7 +80,7 @@ if(!empty($_GET['search'])) {
         </ul>
       </section>
 
-      <a href="apply.php?ref=<?php echo $row['reference_num']; ?>" class="apply_button">Apply Now</a>
+      <a href="apply.php?" class="apply_button">Apply Now</a>
     </article>
   <?php } ?>
 
