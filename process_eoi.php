@@ -8,7 +8,7 @@
 *
 * Author:                Kaleb Larkins
 * Date created:          21/5/2026
-* Last Modified:         27/5/2026
+* Last Modified:         28/5/2026
 */
 
 require_once "./settings.php";
@@ -71,7 +71,7 @@ require_once "./settings.php";
       foreach($input_fields as $field){
          $data[$field] = isset($_POST[$field]) ? clean_data($_POST[$field]) : '';
       }
-      $skill_set = isset($_POST['skill_set[]']) ? implode(', ', $_POST['skill_set[]']) : '';
+      $skill_set = isset($_POST['skill_set[]']) ? implode(', ', $_POST['skill_set[]']) : "" ;
       
       /*
       * Validation:

@@ -40,7 +40,7 @@ CREATE TABLE `eoi` (
   `postcode` int(4) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone_num` VARCHAR(12) NOT NULL,
-  `skill_set` set('Communication','Consultation Strategy Design','Frontend development','Backend development','Knowledge on Git version control') NOT NULL,
+  `skill_set` text NOT NULL,
   `other_skills` text NOT NULL,
   `status` enum('New','Current','Final','') NOT NULL DEFAULT 'New'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

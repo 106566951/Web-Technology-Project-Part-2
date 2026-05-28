@@ -80,13 +80,15 @@
                 <legend>Applicant Skill-set</legend>
                 <p>
                     <label for="comms">Communication</label>
-                    <input type="checkbox" name="skill_set[]" id="comms" value="comms">
+                    <input type="checkbox" name="skill_set[]" id="comms" value="Communication">
                     <label for="strategy">Consultation Strategy Design</label>
-                    <input type="checkbox" name="skill_set[]" id="strategy" value="design strategy">
+                    <input type="checkbox" name="skill_set[]" id="strategy" value="Consultation Strategy Design">
                     <label for="frontend">Frontend development</label>
-                    <input type="checkbox" name="skill_set[]" id="frontend" value="frontend">
+                    <input type="checkbox" name="skill_set[]" id="frontend" value="Frontend development">
                     <label for="backend">Backend development</label>
-                    <input type="checkbox" name="skill_set[]" id="backend" value="backend">
+                    <input type="checkbox" name="skill_set[]" id="backend" value="Backend development">
+                    <label for="backend">Knowledge on Git version control</label>
+                    <input type="checkbox" name="skill_set[]" id="git_control" value="Knowledge on Git version control">
                 </p>
                 <p>
                     <label for="other_skills">Other Skills</label><br>
