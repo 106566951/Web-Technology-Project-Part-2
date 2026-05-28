@@ -1,4 +1,5 @@
 <?php include 'header.inc'; ?>
+<?php include 'nav.php'; ?>
     
 <style>
     .text_with_image_container article {
@@ -27,7 +28,7 @@
 
         <!-- Image of Logo --> 
         <aside>
-            <img class="border_with_shadow" src="images/greengrid_logo.png" alt="greengrid_logo" width="500">
+            <img class="border_with_shadow" src="styles/images/greengrid_logo.png" alt="greengrid_logo" width="500">
         </aside>
     </div>
 

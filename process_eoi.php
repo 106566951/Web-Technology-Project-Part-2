@@ -23,8 +23,8 @@ require_once "./settings.php";
             CREATE TABLE IF NOT EXISTS `eoi` (
             `eoi_id` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
             `reference_num` varchar(6) NOT NULL,
-            `first_name` varchar(50) NOT NULL,
-            `last_name` varchar(50) NOT NULL,
+            `firstname` varchar(50) NOT NULL,
+            `lastname` varchar(50) NOT NULL,
             `dob` date NOT NULL,
             `gender` enum('other','Male','Female') NOT NULL DEFAULT 'other',
             `street` text NOT NULL,
@@ -63,7 +63,7 @@ require_once "./settings.php";
        * Sanitisation:
        */
       # Takes each text based input field and cleans the $post inputs.
-      $input_fields = ['reference_num', 'first_name', 'last_name', 
+      $input_fields = ['reference_num', 'firstname', 'lastname', 
                   'dob', 'gender', 'street',
                   'suburb_town', 'state', 'postcode', 
                   'email', 'phone_num', 'other_skills'];
@@ -90,7 +90,7 @@ require_once "./settings.php";
          }
       }
       # Validating Names input:
-      foreach (['first_name', 'last_name'] as $name) {
+      foreach (['firstname', 'lastname'] as $name) {
          if(empty($data[$name])) {
             $error_messages[$name] = "First and last name is required.";
          } elseif(!preg_match('/^[a-zA-Z]{1,20}$/', $data[$name])) { # Moved regex to php 
@@ -170,13 +170,13 @@ require_once "./settings.php";
           * Inserting data to Database:
           */
          $query = "INSERT INTO eoi (
-         reference_num, first_name, last_name, dob,
+         reference_num, firstname, lastname, dob,
          gender, street, suburb_town, state,
          postcode, email, phone_num, skill_set, other_skills) 
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
          $stmt = $conn->prepare($query); # Must right query correctly with placeholders.
          $stmt->bind_param("sssssssssssss", 
-         $data['reference_num'], $data['first_name'], $data['last_name'],
+         $data['reference_num'], $data['firstname'], $data['lastname'],
          $data['dob'], $data['gender'], $data['street'],
          $data['suburb_town'], $data['state'], $data['postcode'],
          $data['email'], $data['phone_num'], $skill_set,
