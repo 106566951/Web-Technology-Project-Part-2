@@ -13,12 +13,12 @@
             <fieldset class="form_field" id="input_user">
                 <legend>Applicant Details</legend>
                 <p>
-                    <label for="first_name">First Name:</label>
-                    <input class="form_input" type="text" name="first_name" id="first_name" maxlength="20">
+                    <label for="firstname">First Name:</label>
+                    <input class="form_input" type="text" name="firstname" id="firstname" maxlength="20">
                 </p>
                 <p>
-                    <label for="last_name">Last Name:</label>
-                    <input class="form_input" type="text" name="last_name" id="last_name" maxlength="20">
+                    <label for="lastname">Last Name:</label>
+                    <input class="form_input" type="text" name="lastname" id="lastname" maxlength="20">
                 </p>
                 <p>
                     <label for="DOB">Date of Birth:</label>
