@@ -45,7 +45,6 @@ $result = mysqli_query($conn, $query);
 		
 <section id="member-quotes">
 <h2> Member Contributions and Quotes</h2>
-  <dl>
 <?php
 
 if ($result && mysqli_num_rows($result) > 0) {
