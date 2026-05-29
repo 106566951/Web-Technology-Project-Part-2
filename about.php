@@ -1,5 +1,4 @@
 <?php include 'header.inc'; ?>
-<?php include 'about_table.php'; ?>
 <?php require_once 'settings.php'; 
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
