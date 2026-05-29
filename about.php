@@ -7,7 +7,7 @@ if (!$conn) {
 }
 
 // Fetch member contributions from the database
-$query = "SELECT * FROM `member_contributions` ORDER BY `id` Desc";
+$query = "SELECT * FROM `member_contributions` ORDER BY `id` DESC";
 $result = mysqli_query($conn, $query);
 ?>
 	<!--Embedded css styling for the articles  -->
