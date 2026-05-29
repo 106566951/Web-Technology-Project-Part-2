@@ -24,7 +24,7 @@
 
 /* Removes default padding and margin from body tag */
 body {
-    background-image: url('images/background_graphic.png');
+    background-image: url('images/background_graphic.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
