@@ -83,23 +83,6 @@ INSERT INTO `jobs` (`id`, `title`, `reference_num`, `badge`, `description`, `sal
 -- Table structure for table `member_contributions`
 --
 
-CREATE TABLE `member_contributions` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(50) NOT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `shared_responsibility` text NOT NULL,
-  `individual_contributions` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `member_contributions`
---
-
-INSERT INTO `member_contributions` (`id`, `firstname`, `lastname`, `shared_responsibility`, `individual_contributions`) VALUES
-(105917590, 'Kaleb', 'Larkins', 'CSS File', 'Apply.html | Styles for application form | Quote: \"Non tutti i supereroi indossano un mantello: ALT+TAB\" (Translation: \"Not all heroes wear capes: ALT+TAB\")'),
-(106216450, 'Joshua', 'Joshi', 'CSS File', 'About.html | Managing Jira account | Quote: \"ബഗ് സ്പ്രേ അടിച്ചിട്ടും ബഗ് റിസോൾവാവണ്ണില്ല\" (Translation: \"The bugs still exist even after I emptied the bug spray\")'),
-(106520711, 'Leo', 'Dalton', 'CSS File', 'Index.html | Create navigation menu common | Ensure structure of HTML follows accessibility guidelines (semantic tags, readability, etc) | Quote: \"睡眠方面, 我没睡过.\" (Translation: \"In terms of sleep, I had no sleep\")'),
-(106566951, 'Andy', 'Huynh', 'CSS File', 'Jobs page | Create appropriate links to Jira project, GitHub repository, Email | Quote: \"si ça marche n\'y touchez pas\" (Translation: \"If it works, don\'t touch it.\")');
 
 -- --------------------------------------------------------
 
