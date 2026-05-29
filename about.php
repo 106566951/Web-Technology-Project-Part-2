@@ -1,6 +1,15 @@
 <?php include 'header.inc'; ?>
-<?php include 'nav.php'; ?>
+<?php include 'about_table.php'; ?>
+<?php require_once 'settings.php'; 
+$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
+// Fetch member contributions from the database
+$query = "SELECT * FROM `member_contributions` ORDER BY `id` Desc";
+$result = mysqli_query($conn, $query);
+?>
 	<!--Embedded css styling for the articles  -->
     <style>
       caption{
@@ -37,52 +46,42 @@
 <section id="member-quotes">
 <h2> Member Contributions and Quotes</h2>
   <dl>
-    <dt><span class="sample">106566951 Andy Huynh</span></dt>
-    <dd>Contribution:<ul>
-        <li>Shared Responsibility: CSS File</li>
-	    <li>Individual Responsibility: Jobs page</li>
-	    <li>Individual Responsibility: Create appropriate links to Jira project, GitHub repository, Email</li>
-</ul></dd>
-    <dd lang="fr">&quot;si &ccedil;a marche n&apos;y touchez pas&quot;</dd>   
-    <dd>Translation: &quot;If it works, don't touch it.&quot;</dd>
-</dl>
-    <br>
-<dl>
-    <dt><span class="sample">106216450 Joshua Joshi</span></dt>
-    <dd>Contribution:<ul>
-        <li>Shared Responsibility: CSS File</li>
-        <li>Individual Responsibility: About.html</li>
-   	    <li>Individual Responsibility: Managing Jira account</li>
-</ul></dd>
-<dd lang="ml" style="font-family: 'Noto Sans Malayalam', sans-serif;">
-  &quot;ബഗ് സ്പ്രേ അടിച്ചിട്ടും ബഗ് റിസോൾവാവണ്ണില്ല&quot;</dd>  
-  <dd>Translation: &quot;The bugs still exist even after I emptied the bug spray&quot;</dd>    
-</dl>
-<br>
-<dl>
-    <dt><span class="sample">106520711 Leo Dalton</span></dt>
-    <dd>Contribution:<ul>
-      <li>Shared Responsibility: CSS File</li>
-	    <li>Individual Responsibility: Index.html</li>
-	    <li>Individual Responsibility: Individual Responsibility: Create navigation menu common </li>
-	    <li>Individual Responsibility: Ensure structure of HTML follows accessibility guidelines (semantic tags, readability, etc)</li>
-</ul></dd>
-<dd>&quot;睡眠方面, 我没睡过.&quot;</dd>
-<dd>Translation: &quot;In terms of sleep, I had no sleep&quot;</dd>
-</dl>
-<br>    
-<dl>
-    <dt><span class="sample">105917590 Kaleb Larkins</span></dt>
-    <dd>Contribution:<ul>
-        <li>Shared Responsibility: CSS File</li>
-        <li>Individual Responsibility: Apply.html</li>
-	      <li>Individual Responsibility: Styles for application form</li>
-</ul></dd><dd>
-  <dd lang="it">&quot;Non tutti i supereroi indossano un mantello&#58; 
-  <kbd>ALT</kbd>+<kbd>TAB</kbd>&quot;</dd>
-  <dd>Translation: &quot;Not all heroes wear capes&#58; <kbd>ALT</kbd>+<kbd>TAB</kbd>&quot;</dd>
-</dl>
-</section>
+<?php
+
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row['id'];
+        $firstname = htmlspecialchars($row['firstname']);
+        $lastname = htmlspecialchars($row['lastname']);
+        $shared = htmlspecialchars($row['shared_responsibility']);
+        $ind1 = htmlspecialchars($row['individual1']);
+        $ind2 = htmlspecialchars($row['individual2']);
+        $quote = htmlspecialchars($row['quote']);
+        $translation = htmlspecialchars($row['translation']);
+        $ind3 = htmlspecialchars($row['individual3']);
+        $ind4 = htmlspecialchars($row['individual4']);
+        $ind5 = htmlspecialchars($row['individual5']);
+     {
+            echo "<dl>\n";
+            echo "    <dt><span class='sample'>$id $firstname $lastname</span></dt>\n";
+            echo "    <dd>Contribution:<ul>\n";
+            echo "        <li>Shared Responsibility: $shared</li>\n";
+            echo "        <li>Individual Responsibility: $ind1</li>\n";
+            echo "        <li>Individual Responsibility: $ind2</li>\n";
+            echo "    </ul></dd>\n";
+            echo "    <dd lang=\"fr\">$quote</dd>\n";   
+            echo "    <dd>Translation: $translation</dd>\n";
+            echo "    <dd>Individual Responsibility: $ind3</dd>\n";
+            echo "    <dd>Individual Responsibility: $ind4</dd>\n"; 
+            echo "    <dd>Individual Responsibility: $ind5</dd>\n";
+            echo "</dl>\n<br>\n";
+        } 
+
+    }
+} else {
+    echo "<p>No contributions found in the database.</p>";
+}
+?>
 <br>
 <figure>
   <img src="images/The_Coders.jpg" alt="Group photo of the Coders working together" width="400" height="300" loading="lazy">
