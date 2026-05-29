@@ -12,7 +12,7 @@ if(!empty($_GET['search'])) {
 ?>
 
 <?php include 'header.inc'; ?>
-<?php include 'nav.php'; ?>
+
 <style>
   article {
     background-color: #559455;
