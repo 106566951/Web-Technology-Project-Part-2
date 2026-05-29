@@ -68,8 +68,8 @@ if ($result && mysqli_num_rows($result) > 0) {
             echo "        <li>Individual Responsibility: $ind1</li>\n";
             echo "        <li>Individual Responsibility: $ind2</li>\n";
             echo "    </ul></dd>\n";
-            echo "    <dd lang=\"fr\">$quote</dd>\n";   
-            echo "    <dd>Translation: $translation</dd>\n";
+            echo "    <dd>\"$quote\"</dd>\n";   
+            echo "    <dd>Translation: \"$translation\"</dd>\n";
             echo "    <dd>Individual Responsibility: $ind3</dd>\n";
             echo "    <dd>Individual Responsibility: $ind4</dd>\n"; 
             echo "    <dd>Individual Responsibility: $ind5</dd>\n";
