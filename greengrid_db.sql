@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2026 at 04:26 AM
+-- Generation Time: May 30, 2026 at 12:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `eoi` (
-  `EOInumber` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `EOInumber` int(11) NOT NULL,
   `reference_num` varchar(6) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
@@ -39,11 +39,18 @@ CREATE TABLE `eoi` (
   `state` enum('VIC','NSW','QLD','NT','WA','SA','TAS','ACT') NOT NULL,
   `postcode` int(4) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL,
-  `phone_num` VARCHAR(12) NOT NULL,
+  `phone_num` varchar(12) NOT NULL,
   `skill_set` text NOT NULL,
   `other_skills` text NOT NULL,
   `status` enum('New','Current','Final','') NOT NULL DEFAULT 'New'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `eoi`
+--
+
+INSERT INTO `eoi` (`EOInumber`, `reference_num`, `first_name`, `last_name`, `dob`, `gender`, `street`, `suburb_town`, `state`, `postcode`, `email`, `phone_num`, `skill_set`, `other_skills`, `status`) VALUES
+(1, 'ce801', 'Josh', 'Allen', '2007-04-22', 'Male', '100 swanston st', 'melbourne', 'VIC', 3000, 'rty@hmail.com', '0487649300', 'Communication, Frontend development', 'nn', 'New');
 
 -- --------------------------------------------------------
 
@@ -83,6 +90,29 @@ INSERT INTO `jobs` (`id`, `title`, `reference_num`, `badge`, `description`, `sal
 -- Table structure for table `member_contributions`
 --
 
+CREATE TABLE `member_contributions` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `shared_responsibility` text NOT NULL,
+  `individual1` text NOT NULL,
+  `individual2` text NOT NULL,
+  `quote` text NOT NULL,
+  `translation` text NOT NULL,
+  `individual3` text NOT NULL,
+  `individual4` text NOT NULL,
+  `individual5` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `member_contributions`
+--
+
+INSERT INTO `member_contributions` (`id`, `firstname`, `lastname`, `shared_responsibility`, `individual1`, `individual2`, `quote`, `translation`, `individual3`, `individual4`, `individual5`) VALUES
+(105917590, 'Kaleb', 'Larkins', 'CSS File', 'apply.html', 'Styles for application form', 'Non tutti i supereroi indossano un mantello: ALT+TAB', 'Not all heroes wear capes: ALT+TAB', 'ind3', 'ind4', 'ind5'),
+(106216450, 'Joshua', 'Joshi', 'CSS File', 'about.html', 'Managing Jira account', 'ബഗ് സ്പ്രേ അടിച്ചിട്ടും ബഗ് റിസോൾവാവണ്ണില്ല', 'The bugs still exist even after I emptied the bug spray', 'Contributions Part 3', 'Contributions Part 4', 'Contributions Part 5'),
+(106520711, 'Leo', 'Dalton', 'CSS File', 'index.html', 'Create navigation menu common.', '睡眠方面, 我没睡过', 'In terms of sleep, I had no sleep.', 'ind3', 'ind4', 'ind5'),
+(106566951, 'Andy', 'Huynh', 'CSS File', 'jobs.html', 'Create appropriate links to Jira project, GitHub repository, Email', 'si ça marche n\'y touchez pas', 'If it works, don\'t touch it.', 'ind3', 'ind4', 'ind5');
 
 -- --------------------------------------------------------
 
@@ -103,6 +133,8 @@ CREATE TABLE `users` (
 --
 -- Indexes for table `eoi`
 --
+ALTER TABLE `eoi`
+  ADD PRIMARY KEY (`EOInumber`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `street` (`street`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `suburb_town` (`suburb_town`);
 
@@ -130,16 +162,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `eoi`
+--
+ALTER TABLE `eoi`
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `member_contributions`
---
-ALTER TABLE `member_contributions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106566952;
 
 --
 -- AUTO_INCREMENT for table `users`
