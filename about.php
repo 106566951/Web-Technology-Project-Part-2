@@ -66,7 +66,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         for ($i = 1; $i <= 2; $i++) {
           $ind = 'individual' . $i;
                     
-          if (isset($row[$ind]) && !empty($row[$ind])) {
+          if (!empty($row[$ind])) {
               $element = htmlspecialchars($row[$ind]);
               echo " <li>Individual Responsibility: $element</li>\n";
               }
@@ -75,9 +75,9 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             // Part 2
           echo " <dd>Contributions in Project Part 2:<ul>\n";
-          for ($i = 3; $i <= 10; $i++) {
+          for ($i = 3; $i <= 11; $i++) {
             $ind = 'individual' . $i;
-          if (isset($row[$ind]) && !empty($row[$ind])) {
+          if (!empty($row[$ind])) {
             $element = htmlspecialchars($row[$ind]);
             echo " <li>Individual Responsibility: $element</li>\n";
                    }
