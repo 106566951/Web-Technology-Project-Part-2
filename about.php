@@ -52,33 +52,47 @@ if ($result && mysqli_num_rows($result) > 0) {
         $firstname = htmlspecialchars($row['firstname']);
         $lastname = htmlspecialchars($row['lastname']);
         $shared = htmlspecialchars($row['shared_responsibility']);
-        $ind1 = htmlspecialchars($row['individual1']);
-        $ind2 = htmlspecialchars($row['individual2']);
         $quote = htmlspecialchars($row['quote']);
         $translation = htmlspecialchars($row['translation']);
-        $ind3 = htmlspecialchars($row['individual3']);
-        $ind4 = htmlspecialchars($row['individual4']);
-        $ind5 = htmlspecialchars($row['individual5']);
-     {
-            echo "<dl>\n";
-            echo "    <dt><span class='sample'>$id $firstname $lastname</span></dt>\n";
-            echo "    <dd>Contribution:<ul>\n";
-            echo "        <li>Shared Responsibility: $shared</li>\n";
-            echo "        <li>Individual Responsibility: $ind1</li>\n";
-            echo "        <li>Individual Responsibility: $ind2</li>\n";
-            echo "    </ul></dd>\n";
-            echo "    <dd>\"$quote\"</dd>\n";   
-            echo "    <dd>Translation: \"$translation\"</dd>\n";
-            echo "    <dd>Individual Responsibility: $ind3</dd>\n";
-            echo "    <dd>Individual Responsibility: $ind4</dd>\n"; 
-            echo "    <dd>Individual Responsibility: $ind5</dd>\n";
-            echo "</dl>\n<br>\n";
-        } 
 
-    }
-} else {
-    echo "<p>No contributions found in the database.</p>";
-}
+        echo "<dl>\n";
+        echo " <dt><span class='sample'>$id $firstname $lastname</span></dt><br>\n";
+                
+                // Part 1
+        echo " <dd>Contributions in Project Part 1:<ul>\n";
+        echo " <li>Shared Responsibility: $shared</li>\n";
+                
+
+        for ($i = 1; $i <= 2; $i++) {
+          $ind = 'individual' . $i;
+                    
+          if (isset($row[$ind]) && !empty($row[$ind])) {
+              $element = htmlspecialchars($row[$ind]);
+              echo " <li>Individual Responsibility: $element</li>\n";
+              }
+                }
+         echo " </ul></dd><br>\n";
+
+            // Part 2
+          echo " <dd>Contributions in Project Part 2:<ul>\n";
+          for ($i = 3; $i <= 10; $i++) {
+            $ind = 'individual' . $i;
+          if (isset($row[$ind]) && !empty($row[$ind])) {
+            $element = htmlspecialchars($row[$ind]);
+            echo " <li>Individual Responsibility: $element</li>\n";
+                   }
+                }
+          echo " </ul></dd><br>\n";
+
+          echo " <dd>\"$quote\"</dd>\n";
+          echo " <dd>Translation: \"$translation\"</dd>\n";
+          echo "</dl>\n<br>\n";
+          }
+        
+$result->close();
+        } else {
+            echo "<p>No contributions found in the database.</p>";
+        }
 ?>
 <br>
 <figure>
