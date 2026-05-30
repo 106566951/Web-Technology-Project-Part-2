@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2026 at 12:47 AM
+-- Generation Time: May 30, 2026 at 04:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -95,24 +95,28 @@ CREATE TABLE `member_contributions` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `shared_responsibility` text NOT NULL,
-  `individual1` text NOT NULL,
-  `individual2` text NOT NULL,
   `quote` text NOT NULL,
   `translation` text NOT NULL,
-  `individual3` text NOT NULL,
-  `individual4` text NOT NULL,
-  `individual5` text NOT NULL
+  `individual1` text DEFAULT NULL,
+  `individual2` text DEFAULT NULL,
+  `individual3` text DEFAULT NULL,
+  `individual4` text DEFAULT NULL,
+  `individual5` text DEFAULT NULL,
+  `individual6` text DEFAULT NULL,
+  `individual7` text DEFAULT NULL,
+  `individual8` text DEFAULT NULL,
+  `individual9` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `member_contributions`
 --
 
-INSERT INTO `member_contributions` (`id`, `firstname`, `lastname`, `shared_responsibility`, `individual1`, `individual2`, `quote`, `translation`, `individual3`, `individual4`, `individual5`) VALUES
-(105917590, 'Kaleb', 'Larkins', 'CSS File', 'apply.html', 'Styles for application form', 'Non tutti i supereroi indossano un mantello: ALT+TAB', 'Not all heroes wear capes: ALT+TAB', 'ind3', 'ind4', 'ind5'),
-(106216450, 'Joshua', 'Joshi', 'CSS File', 'about.html', 'Managing Jira account', 'ബഗ് സ്പ്രേ അടിച്ചിട്ടും ബഗ് റിസോൾവാവണ്ണില്ല', 'The bugs still exist even after I emptied the bug spray', 'Contributions Part 3', 'Contributions Part 4', 'Contributions Part 5'),
-(106520711, 'Leo', 'Dalton', 'CSS File', 'index.html', 'Create navigation menu common.', '睡眠方面, 我没睡过', 'In terms of sleep, I had no sleep.', 'ind3', 'ind4', 'ind5'),
-(106566951, 'Andy', 'Huynh', 'CSS File', 'jobs.html', 'Create appropriate links to Jira project, GitHub repository, Email', 'si ça marche n\'y touchez pas', 'If it works, don\'t touch it.', 'ind3', 'ind4', 'ind5');
+INSERT INTO `member_contributions` (`id`, `firstname`, `lastname`, `shared_responsibility`, `quote`, `translation`, `individual1`, `individual2`, `individual3`, `individual4`, `individual5`, `individual6`, `individual7`, `individual8`, `individual9`) VALUES
+(105917590, 'Kaleb', 'Larkins', 'CSS File', 'Non tutti i supereroi indossano un mantello: ALT+TAB', 'Not all heroes wear capes: ALT+TAB', 'apply.html', 'Styles for application form', '', '', '', NULL, NULL, NULL, NULL),
+(106216450, 'Joshua', 'Joshi', 'CSS File', 'ബഗ് സ്പ്രേ അടിച്ചിട്ടും ബഗ് റിസോൾവാവണ്ണില്ല', 'The bugs still exist even after I emptied the bug spray', 'about.html', 'Managing Jira account', 'Created greengrid_db Database for storing and loading data into the web pages', 'Created settings.php with host, user name, password, database name.', 'Created table for dynamically loading member contributions to about page.', 'Managing group presentation and assigning topics to members.', 'Validating  Code in W3C and WAVE extension.', 'Ensuring the web pages are user friendly and follow Web Accessibility guidelines', 'Creating README.md page'),
+(106520711, 'Leo', 'Dalton', 'CSS File', '睡眠方面, 我没睡过', 'In terms of sleep, I had no sleep.', 'index.html', 'Create navigation menu common.', '', '', '', NULL, NULL, NULL, NULL),
+(106566951, 'Andy', 'Huynh', 'CSS File', 'si ça marche n\'y touchez pas', 'If it works, don\'t touch it.', 'jobs.html', 'Create appropriate links to Jira project, GitHub repository, Email', '', '', '', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
