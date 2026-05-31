@@ -1,9 +1,35 @@
 <?php include 'header.inc'; ?>
-<?php require_once 'settings.php'; 
+<?php 
+require_once 'settings.php'; 
+
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-}
+} else {
+    $create_table = "
+    CREATE TABLE IF NOT EXISTS `member_contributions` (
+      `id` int(11) NOT NULL PRIMARY KEY,
+      `firstname` varchar(50) NOT NULL,
+      `lastname` varchar(50) NOT NULL,
+      `shared_responsibility` text NOT NULL,
+      `quote` text NOT NULL,
+      `translation` text NOT NULL,
+      `individual1` text DEFAULT NULL,
+      `individual2` text DEFAULT NULL,
+      `individual3` text DEFAULT NULL,
+      `individual4` text DEFAULT NULL,
+      `individual5` text DEFAULT NULL,
+      `individual6` text DEFAULT NULL,
+      `individual7` text DEFAULT NULL,
+      `individual8` text DEFAULT NULL,
+      `individual9` text DEFAULT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
+    
+    if(!mysqli_query($conn, $create_table)){ 
+      
+        die("Table not created: " . mysqli_error($conn));
+    } 
+} 
 
 // Fetch member contributions from the database
 $query = "SELECT * FROM `member_contributions` ORDER BY `id` DESC";
@@ -75,7 +101,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             // Part 2
           echo " <dd>Contributions in Project Part 2:<ul>\n";
-          for ($i = 3; $i <= 11; $i++) {
+          for ($i = 3; $i <= 9; $i++) {
             $ind = 'individual' . $i;
           if (!empty($row[$ind])) {
             $element = htmlspecialchars($row[$ind]);
