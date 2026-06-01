@@ -419,6 +419,19 @@ footer li {
 
 }
 
+@media (max-width: 768px) {
+
+    .login_card {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .login_form_panel {
+        padding: 32px 24px;
+    }
+
+}
+
 /* ------------------------------------------ */
 /* ------- Manage Page CSS ------- */
 /* ------------------------------------------ */
@@ -521,6 +534,23 @@ footer li {
     padding: 6px 10px;
     border-radius: 50px;
     border: 1.5px solid rgba(119, 221, 119, 0.7);
+}
+
+@media (max-width: 768px) {
+
+    .controls_row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .manage_card {
+        overflow-x: auto;
+    }
+
+    .manage_card, .manage_header {
+        width: 95%;
+    }
+
 }
 
 
