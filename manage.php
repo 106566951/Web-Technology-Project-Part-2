@@ -26,6 +26,7 @@
     <div class="manage_container">
         <!-- Manager Dashboard Title -->
         <!-- Welcome Message -->
+         
         <!-- Search Controls Bar (Search Bar, Sort By Options) -->
         <!-- Search Bar, Sort By Options -->
         <!-- List of EOI -->

@@ -18,5 +18,6 @@
             <li><a class="navlink" href="apply.php">Apply Now</a></li>
             <li><a class="navlink" href="jobs.php">Job Listings</a></li>
             <li><a class="navlink" href="about.php">About Us</a></li>
+            <li><a class="navlink" href="login.php">Employee Log-in</a></li>
         </ul>
     </nav>

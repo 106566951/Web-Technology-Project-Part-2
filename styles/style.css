@@ -71,12 +71,12 @@ nav {
 
 /* formats the navigation bar */
 nav ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 5em;
-    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    margin: 0px;
 }
 
 /* removes dots */
@@ -397,6 +397,18 @@ footer li {
 
 .login_image_panel .image_slogan span {
     color: #c4ffc4;
+}
+
+.login_error {
+
+    padding: 6px;  
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: 400;
+    background-color: #ffb34f;
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+
 }
 
 /* ------------------------------------------ */
