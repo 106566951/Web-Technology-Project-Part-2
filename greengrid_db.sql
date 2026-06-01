@@ -137,8 +137,8 @@ CREATE TABLE `users` (
 --
 -- Indexes for table `eoi`
 --
-ALTER TABLE `eoi`
-  ADD PRIMARY KEY (`EOInumber`);
+ALTER TABLE `eoi` 
+  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
 ALTER TABLE `eoi` ADD FULLTEXT KEY `street` (`street`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `suburb_town` (`suburb_town`);
 
