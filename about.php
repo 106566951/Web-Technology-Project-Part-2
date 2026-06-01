@@ -29,7 +29,7 @@ $result = mysqli_query($conn, $query);
         <section>
             <h2>Welcome to our about page!!</h2>
             <p><span class="red_highlight">Green Grid </span>is a renewable energy company strengthening its technology team to support websites promoting clean energy solutions, project information, and public engagement initiatives.</p>
-            <p>We are a team of experts on Sustainable Energy Solutions at Green Grid dedicated to creating <span class="red_highlight">sustainable solutions, development and employment.</span></p>
+            <p>We are a team of Software Developers on Sustainable Energy Solutions at Green Grid dedicated to creating webpages for <span class="red_highlight">sustainable solutions, development and employment of renewable energy technologies.</span></p>
 		</section>
          <section>
              <h2>Group Information</h2>
