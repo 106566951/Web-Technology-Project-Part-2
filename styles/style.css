@@ -104,6 +104,14 @@ nav li {
 /* ------- Footer CSS ------- */
 /* ------------------------------------------ */
 
+/* Accessibility for mobile */
+@media(max-width: 768px){
+    footer ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* formats the footer */
 footer {
     margin: 0px;
