@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2026 at 01:44 AM
+-- Generation Time: Jun 01, 2026 at 02:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -113,10 +113,10 @@ CREATE TABLE `member_contributions` (
 --
 
 INSERT INTO `member_contributions` (`id`, `firstname`, `lastname`, `shared_responsibility`, `quote`, `translation`, `individual1`, `individual2`, `individual3`, `individual4`, `individual5`, `individual6`, `individual7`, `individual8`, `individual9`) VALUES
-(105917590, 'Kaleb', 'Larkins', 'CSS File', 'Non tutti i supereroi indossano un mantello: ALT+TAB', 'Not all heroes wear capes: ALT+TAB', 'apply.html', 'Styles for application form', 'Created Expression of Interest table, if not existing then dynamically through SQL code in php.', 'Implemented record validation to secure the data', 'Created specify functions such clean_data($data), safe_query($conn, $query, $data) to validate to prevent Cross-Site Scripting ', 'Created process_eoi.php which loads the EOI form created by the user and stores it to the EOI table.', 'Implemented array to store all fields declared in the apply.php', NULL, NULL),
+(105917590, 'Kaleb', 'Larkins', 'CSS File', 'Non tutti i supereroi indossano un mantello: ALT+TAB', 'Not all heroes wear capes: ALT+TAB', 'apply.html', 'Styles for application form', 'Created Expression of Interest table, if not existing then dynamically through SQL code in php.', 'Implemented record validation to secure the data', 'Created specify functions such clean_data($data), safe_query($conn, $query, $data) to validate to prevent Cross-Site Scripting ', 'Created process_eoi.php which loads the EOI form created by the user and stores it to the EOI table.', 'Implemented array to store all fields declared in the apply.php', 'Added media query to header', NULL),
 (106216450, 'Joshua', 'Joshi', 'CSS File', 'ബഗ് സ്പ്രേ അടിച്ചിട്ടും ബഗ് റിസോൾവാവണ്ണില്ല', 'The bugs still exist even after I emptied the bug spray', 'about.html', 'Managing Jira account', 'Created greengrid_db Database for storing and loading data into the web pages', 'Created settings.php with host, user name, password, database name.', 'Created table for dynamically loading member contributions to about page.', 'Managing group presentation and assigning topics to members.', 'Validating  Code in W3C and WAVE extension.', 'Ensuring the web pages are user friendly and follow Web Accessibility guidelines', 'Creating README.md page'),
-(106520711, 'Leo', 'Dalton', 'CSS File', '睡眠方面, 我没睡过', 'In terms of sleep, I had no sleep.', 'index.html', 'Create navigation menu common.', 'Created shared header.php and footer.php', 'Improved the overall CSS of the Web pages', 'Created manage.php to handle user login session', 'Created user table to store user associated session details', 'Security aspect for HD', 'Updated manage.php page to give certain controls to the manager*', NULL),
-(106566951, 'Andy', 'Huynh', 'CSS File', 'si ça marche n\'y touchez pas', 'If it works, don\'t touch it.', 'jobs.html', 'Create appropriate links to Jira project, GitHub repository, Email', 'Created job  table', '', '', NULL, NULL, NULL, NULL);
+(106520711, 'Leo', 'Dalton', 'CSS File', '睡眠方面, 我没睡过', 'In terms of sleep, I had no sleep.', 'index.html', 'Create navigation menu common.', 'Created shared header.php and footer.php', 'Improved the overall CSS of the Web pages', 'Created manage.php to handle user login session', 'Created user table to store user associated session details', 'Security aspect for HD', 'Updated manage.php page to give certain controls to the manager', NULL),
+(106566951, 'Andy', 'Huynh', 'CSS File', 'si ça marche n\'y touchez pas', 'If it works, don\'t touch it.', 'jobs.html', 'Create appropriate links to Jira project, GitHub repository, Email', 'Created job  table.', 'Included shared header and footer to al web pages.', 'Created and matched fields and data types of jobs table with jobs page.', 'Render job descriptions and details dynamically with PHP in jobs.php page', 'Added a search bar to jobs page that retrieves data from the database and loads it to the page upon search.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -131,14 +131,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
+
+--
 -- Indexes for dumped tables
 --
 
 --
 -- Indexes for table `eoi`
 --
-ALTER TABLE `eoi` 
-  MODIFY `EOInumber` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY;
+ALTER TABLE `eoi`
+  ADD PRIMARY KEY (`EOInumber`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `street` (`street`);
 ALTER TABLE `eoi` ADD FULLTEXT KEY `suburb_town` (`suburb_town`);
 
@@ -181,7 +188,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
