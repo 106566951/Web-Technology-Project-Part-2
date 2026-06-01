@@ -18,7 +18,10 @@ if(!empty($_GET['search'])) {
 } else {
     $result = mysqli_query($conn, "SELECT * FROM jobs");
 }
+
+$job_count = mysqli_num_rows($result);
 ?>
+
 
 
 <?php include 'header.inc'; ?>
@@ -45,7 +48,12 @@ if(!empty($_GET['search'])) {
 <main>
   <!-- Inline styling on this H2 to make it stand out-->
   <h2 style="font-size: 1.8rem; color: #2c6e2c; font-style: italic; padding-bottom: 6px;">Current Available Positions</h2>
-  <form method="GET" action="jobs.php">
+  
+  <div class="job_count">
+    <strong><?php echo $job_count; ?> Position<?php echo $job_count !== 1 ? 's' : ''; ?> Available</strong>
+  </div>
+
+  <form method="GET" action="jobs.php" class="search_bar">
 
     <!--Suggested search items for job searchbar-->
     <label for="search" > Search jobs</label>
