@@ -48,6 +48,7 @@ if(!empty($_GET['search'])) {
   <form method="GET" action="jobs.php">
 
     <!--Suggested search items for job searchbar-->
+    <label for="search" > Search jobs</label>
     <input type="text" id="search" name="search" placeholder="Search jobs..." list="search-suggestions">
       <datalist id="search-suggestions">
       <option value="Public Engagement Officer"></option>
