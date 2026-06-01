@@ -61,13 +61,15 @@ if(!empty($_GET['search'])) {
     <button type="submit">Search</button>
     <a href="jobs.php"><button type="button">Reset</button></a>
   </form>
-
+<!-- Show message if no jobs match the user search -->
   <?php if (mysqli_num_rows($result) === 0): ?>
     <p>No jobs found matching your search.</p>
   <?php else: ?>
 
+    <!-- Individual job listing articles-->
   <?php while ($row = mysqli_fetch_assoc($result)) { ?>
     <article class="jobs_article">
+      <!-- Job title — htmlspecialchars prevents XSS attacks -->
       <h2><?php echo htmlspecialchars($row['title']); ?></h2>
       <p>Reference Number: <span class="RefNum"><?php echo htmlspecialchars($row['reference_num']); ?></span></p>
       <span class="badge"><?php echo htmlspecialchars($row['badge']); ?></span>
@@ -76,7 +78,7 @@ if(!empty($_GET['search'])) {
       <p>Report to <?php echo htmlspecialchars($row['reports_to']); ?></p>
       <hr>
       <section>
-        <!-- List of key responsibilities-->
+        <!-- List of key responsibilities using | to seperate elements-->
         <h3>Key Responsibilities</h3>
         <ol>
           <?php foreach (explode('|', $row['responsibilities']) as $item) { ?>
@@ -86,7 +88,7 @@ if(!empty($_GET['search'])) {
       </section>
       <hr>
       <section>
-        <!-- List of essential requirements-->
+        <!-- List of essential requirements using | to seperate elements-->
         <h3>Essential Requirements</h3>
         <ul>
           <?php foreach (explode('|', $row['essential_requirements']) as $item) { ?>
@@ -96,7 +98,7 @@ if(!empty($_GET['search'])) {
       </section>
       <hr>
       <section>
-        <!-- List of preferred requirements-->
+        <!-- List of preferred requirements using | to seperate elements-->
         <h3>Preferred Requirements</h3>
         <ul>
           <?php foreach (explode('|', $row['preferred_requirements']) as $item) { ?>
