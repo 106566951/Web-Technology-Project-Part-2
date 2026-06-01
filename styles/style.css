@@ -655,3 +655,9 @@ figure{
 .apply_button:hover {
     background-color: #3da8e6;
 }
+
+
+.jobs_article {
+    background: linear-gradient(135deg, #76b876, #2c6e2c);
+    transition: transform 0.2s ease;
+}
