@@ -45,7 +45,7 @@
     <div id="table_container" class="border_with_shadow">
         <!-- Table Heading with an Image -->
         <div id="header_with_image">
-            <h2>What <span style="font-size: 1.3em; color: #2c6e2c; text-decoration: underline;">We</span> Offer</h2>
+            <h2>What <span style="font-size: 1.3em; color: #2c6e2c;">We</span> Offer</h2>
             <img src="images/leafs.png" alt="leafs" width="50">
         </div>
         <!-- Table with 4 rows and 3 columns-->

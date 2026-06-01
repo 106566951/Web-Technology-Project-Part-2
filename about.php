@@ -5,36 +5,12 @@ require_once 'settings.php';
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-} else {
-    $create_table = "
-    CREATE TABLE IF NOT EXISTS `member_contributions` (
-      `id` int(11) NOT NULL PRIMARY KEY,
-      `firstname` varchar(50) NOT NULL,
-      `lastname` varchar(50) NOT NULL,
-      `shared_responsibility` text NOT NULL,
-      `quote` text NOT NULL,
-      `translation` text NOT NULL,
-      `individual1` text DEFAULT NULL,
-      `individual2` text DEFAULT NULL,
-      `individual3` text DEFAULT NULL,
-      `individual4` text DEFAULT NULL,
-      `individual5` text DEFAULT NULL,
-      `individual6` text DEFAULT NULL,
-      `individual7` text DEFAULT NULL,
-      `individual8` text DEFAULT NULL,
-      `individual9` text DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;";
-    
-    if(!mysqli_query($conn, $create_table)){ 
-      
-        die("Table not created: " . mysqli_error($conn));
-    } 
-} 
-
+}
+else{
 // Fetch member contributions from the database
 $query = "SELECT * FROM `member_contributions` ORDER BY `id` DESC";
 $result = mysqli_query($conn, $query);
-?>
+}?>
 	<!--Embedded css styling for the articles  -->
     <style>
       caption{
@@ -44,7 +20,7 @@ $result = mysqli_query($conn, $query);
         color: rgb(196, 95, 119);
       }
 
-      /* Added by leo last minute since background graphic clashes with text since there is no colour behind text already */
+      /*Styling for the table */
       body {
         background-color: #c4ffc4;
       }
