@@ -1,7 +1,7 @@
 <?php include 'header.inc'; ?>
     <main>
         <h2 class="form_title">Application Form</h2>  
-        <form method="post" action="process_eoi.php" class="input_form"> 
+        <form method="post" action="process_eoi.php" class="input_form" novalidate> 
             <fieldset class="form_field" id="job_num">
                 <legend>Job Vacancy</legend>
                 <p> 

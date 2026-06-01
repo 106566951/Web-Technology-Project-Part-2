@@ -104,6 +104,14 @@ nav li {
 /* ------- Footer CSS ------- */
 /* ------------------------------------------ */
 
+/* Accessibility for mobile */
+@media(max-width: 768px){
+    footer ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* formats the footer */
 footer {
     margin: 0px;
@@ -666,4 +674,10 @@ figure{
 /*Hover effect for apply button*/
 .apply_button:hover {
     background-color: #3da8e6;
+}
+
+
+.jobs_article {
+    background: linear-gradient(135deg, #76b876, #2c6e2c);
+    transition: transform 0.2s ease;
 }
