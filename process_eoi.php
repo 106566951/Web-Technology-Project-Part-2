@@ -94,7 +94,7 @@ require_once "./settings.php";
          if(empty($data[$name])) {
             $error_messages[$name] = "First and last name is required.";
          } elseif(!preg_match('/^[a-zA-Z]{1,20}$/', $data[$name])) { # Moved regex to php 
-            $error_messages[$name] = "Letters only.";
+            $error_messages[$name] = "Letters only, no more than 20.";
          }
       }
       # Validating date of birth:
