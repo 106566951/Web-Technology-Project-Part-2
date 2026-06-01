@@ -816,3 +816,51 @@ figure{
     background: linear-gradient(135deg, #76b876, #2c6e2c);
     transition: transform 0.2s ease;
 }
+
+
+
+    /* Search bar styling */
+    .search_bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 20px 30px;
+    }
+
+    .search_bar input[type="text"] {
+        padding: 10px 15px;
+        border: 2px solid #2c6e2c;
+        border-radius: 25px;
+        font-size: 1rem;
+        width: 300px;
+        outline: none;
+        
+    }
+
+    .search_bar input[type="text"]:focus {
+        border-color: #76b876;
+        box-shadow: 0 0 8px rgba(44, 110, 44, 0.4);
+    }
+
+        .search_bar button {
+        padding: 10px 20px;
+        background: #2c6e2c;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        
+    }
+
+    .search_bar button:hover {
+        background: #76b876;
+    }
+
+    .search_bar a button {
+        background: #2c6e2c;
+    }
+
+    .search_bar a button:hover {
+        background: #76b876;
+    }
