@@ -17,7 +17,7 @@ $result = mysqli_query($conn, $query);
         font-size: 1.5em;
         font-weight: bold;
         padding-bottom:  10px;
-        color: #FF2400;
+        color: #DC143C;
       }
 
       /*Styling for the table */
