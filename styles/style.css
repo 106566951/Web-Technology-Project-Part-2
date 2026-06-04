@@ -598,7 +598,7 @@ td:hover {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
     color: #1c5637;
-    text-shadow: 6px 4px 8px burlywood;
+    text-shadow: 6px 4px 8px #deb887;
 }
 
 /* MEMBER QUOTES POPUP EFFECT */
@@ -620,7 +620,7 @@ td:hover {
     transform: scale(1.03); 
     background-color: #d5ffd5; 
     border-color: #66cc66; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px #0000001a, 0 4px 6px #0000001a;
     cursor: pointer;
 }
 
@@ -639,7 +639,7 @@ img:hover{
 
 figure{
     margin-left: 400px;
-    border: sienna solid 0.3em;
+    border: #deb887 solid 0.3em;
     width: 400px;
     height: 300px;
 }
