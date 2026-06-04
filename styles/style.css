@@ -49,8 +49,7 @@ main, footer {
 /* ------- Heading and Navigation CSS ------- */
 /* ------------------------------------------ */
 
-/* Accessibility for mobile */
-@media(max-width: 768px){
+
 /* formats the navigation bar */
 nav ul {
     display: flex;
