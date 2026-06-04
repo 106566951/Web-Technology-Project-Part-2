@@ -51,17 +51,27 @@ main, footer {
 
 /* Accessibility for mobile */
 @media(max-width: 768px){
-     nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 12px;
-    }
+/* formats the navigation bar */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Changed from space-around for better clustering */
+    align-items: center;
+    text-align: center;
+    margin: 0px;
+    padding: 16px 32px; /* Adds breathing room around the edges */
+    flex-wrap: wrap; /* CRITICAL: Allows links to drop to a new line if they run out of space */
+    gap: 30px; /* Adds consistent, clean spacing between the links */
+}
 
-    .navlink {
-        font-size: 1.1rem;
-    }
+/* formats the navigation links */
+.navlink { 
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease;
+    white-space: nowrap; /* CRITICAL: Keeps "Home Page" on one line instead of stacking */
 }
 
 /* colours the navigation bar */
