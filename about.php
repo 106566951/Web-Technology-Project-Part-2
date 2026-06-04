@@ -95,6 +95,7 @@ $result->close();
         } else {
             echo "<p>No contributions found in the database.</p>";
         }
+$conn->close();
 ?>
 <br>
 <figure>
